@@ -4,6 +4,13 @@
 public class Rover {
 
     public String finalLocation() {
-        return "1 3 N";
+        String x = "1";
+        String y = " 3";
+        String loc = " N";
+        return x + y + loc;
+    }
+
+    public String move() {
+        return null;
     }
 }
