@@ -40,4 +40,8 @@ public class Rover {
         }
         return currentPosition();
     }
+
+    public void turnRight() {
+
+    }
 }
