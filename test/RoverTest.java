@@ -18,12 +18,12 @@ public class RoverTest {
         assertTrue("1 4 N", true);
     }
 
-//    @Test
-//    public void shouldMoveLeft(){
-//        Rover rover = new Rover();
-//        rover.turnLeft();
-//        assertTrue( "1 4 W", true);
-//    }
+    @Test
+    public void shouldMoveLeft(){
+        Rover rover = new Rover(1, 3, "N");
+        rover.turnLeft();
+        assertTrue( "1 4 W", true);
+    }
 
 
 }

@@ -1,7 +1,7 @@
 public class Rover {
     private  Integer x;
     private Integer y;
-    private final String direction;
+    private String direction;
 
     public Rover(Integer x, Integer y, String direction) {
         this.x = x;
@@ -13,7 +13,7 @@ public class Rover {
         return x + " "+ y + " " + direction;
     }
 
-    public String  move() {
+    public String move() {
 
        if( direction == "N"){
             y += 1;
@@ -28,4 +28,16 @@ public class Rover {
     }
 
 
+    public String turnLeft() {
+        if( direction == "N"){
+            direction = "W";
+        } else if(direction == "S"){
+            direction = "E";
+        } else if(direction == "E"){
+            direction = "N";
+        } else{
+            direction = "S";
+        }
+        return currentPosition();
+    }
 }

@@ -7,7 +7,11 @@ public class Main {
         Rover rover = new Rover(1, 3, "N");
 
         System.out.println(rover.currentPosition());
-//        System.out.print(rover.move());
+
+//        **** Temporal code for testing purposes *****
+        System.out.print(rover.move());
+         System.out.print(rover.turnLeft());
+
 
     }
 }
