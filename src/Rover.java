@@ -41,7 +41,16 @@ public class Rover {
         return currentPosition();
     }
 
-    public void turnRight() {
-
+    public String turnRight() {
+        if( direction == "N"){
+            direction = "E";
+        } else if(direction == "S"){
+            direction = "W";
+        } else if(direction == "E"){
+            direction = "S";
+        } else{
+            direction = "N";
+        }
+        return currentPosition();
     }
 }
