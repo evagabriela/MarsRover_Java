@@ -28,4 +28,7 @@ public class Rover {
        loc("N");
     }
 
+    public String turnLeft() {
+        return null;
+    }
 }
