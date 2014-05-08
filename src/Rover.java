@@ -1,34 +1,31 @@
 public class Rover {
+    private  Integer x;
+    private Integer y;
+    private final String direction;
 
-
-    public void start() {
-       System.out.println("1 3 N");
-
+    public Rover(Integer x, Integer y, String direction) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
     }
 
-    private int xCoordinate(int x) {
-        System.out.print(x + " ");
-       return x;
+    public String currentPosition(){
+        return x + " "+ y + " " + direction;
     }
 
-    private int yCoordinate(int y) {
-        System.out.print(y + " ");
-        return  y;
+    public String  move() {
+
+       if( direction == "N"){
+            y += 1;
+        } else if(direction == "S"){
+           y -= 1;
+       } else if(direction == "E"){
+           x += 1;
+       } else{
+           x -= 1;
+       }
+        return currentPosition();
     }
 
-    private String loc(String loc) {
-        System.out.print(loc);
-        return loc;
-    }
 
-    public void move() {
-       int y = 3;
-       xCoordinate( 1);
-       yCoordinate(y + 1);
-       loc("N");
-    }
-
-    public String turnLeft() {
-        return null;
-    }
 }
