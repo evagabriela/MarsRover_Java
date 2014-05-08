@@ -1,8 +1,5 @@
-import java.io.PrintStream;
-
 public class Rover {
 
-    private PrintStream printStream;
 
     public void start() {
        System.out.println("1 3 N");
@@ -10,23 +7,25 @@ public class Rover {
     }
 
     private int xCoordinate(int x) {
+        System.out.print(x + " ");
        return x;
     }
 
     private int yCoordinate(int y) {
+        System.out.print(y + " ");
         return  y;
     }
 
     private String loc(String loc) {
+        System.out.print(loc);
         return loc;
     }
 
     public void move() {
-        int x = 1;
-       xCoordinate(x + 1);
-       yCoordinate(3);
+       int y = 3;
+       xCoordinate( 1);
+       yCoordinate(y + 1);
        loc("N");
     }
-
 
 }
