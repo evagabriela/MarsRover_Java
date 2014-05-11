@@ -12,7 +12,6 @@ public class RoverTest {
     @Before
     public void setUp(){
         rover = new Rover(1, 3, "N");
-
     }
 
     @Test
@@ -37,6 +36,11 @@ public class RoverTest {
     public void shouldMoveRight(){
         rover.turnRight();
         TestCase.assertEquals("1 3 E", rover.currentPosition());
+    }
+
+    @Test
+    public void shouldProcessMoreThanOneCommand(){
+
     }
 
 

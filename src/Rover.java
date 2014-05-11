@@ -14,7 +14,6 @@ public class Rover {
     }
 
     public String move() {
-
        if( direction == "N"){
             y += 1;
         } else if(direction == "S"){
@@ -26,7 +25,6 @@ public class Rover {
        }
         return currentPosition();
     }
-
 
     public String turnLeft() {
         if( direction == "N"){
@@ -53,4 +51,6 @@ public class Rover {
         }
         return currentPosition();
     }
+
+
 }
