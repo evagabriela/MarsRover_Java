@@ -35,4 +35,11 @@ public class RoverTest {
         assertEquals(rover.currentPosition(), "1 3 E");
     }
 
+    @Test
+    public void shouldProcessMoreThanOneCommand(){
+        rover.move();
+        rover.turnLeft();
+        rover.move();
+        assertEquals(rover.currentPosition(), "0 4 W");
+    }
 }
