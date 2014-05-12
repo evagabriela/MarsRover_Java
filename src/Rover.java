@@ -52,5 +52,4 @@ public class Rover {
         return currentPosition();
     }
 
-
 }

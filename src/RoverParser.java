@@ -9,7 +9,6 @@ import java.util.List;
 public class RoverParser {
     private List<Coordinate> coordinates = new ArrayList<Coordinate>();
 
-
     public RoverParser(String fileName) {
 //        System.out.println("Reading File from Java code");
         //Name of the file
