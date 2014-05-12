@@ -18,23 +18,23 @@ public class Main {
         String yCoordinate = coordinates.get(0).y;
         Integer yCoordinateNum = Integer.parseInt(yCoordinate);
 
-
         String direction = coordinates.get(0).direction;
 
-
         Rover rover = new Rover(xCoordinateNum,yCoordinateNum, direction);
+
 
         System.out.println("**** Current Position ****");
         System.out.println(rover.currentPosition());
 
-//        **** Temporal code for testing purposes *****
-        System.out.println("**** Move Rover ****");
+
+////        **** Temporal code for checking code purposes *****
+        System.out.println("**** Move Rover Forward ****");
         System.out.println(rover.move());
 
+//
         System.out.println("**** Rover Turn Left****");
-
-        System.out.print(rover.turnLeft());
-
+////        Problem:  Its not recognizing "N" direction and therefore its not changing direction when turned left.  Why is not recognizing direction to be "N"?
+        System.out.println(rover.turnLeft());
 
     }
 }
