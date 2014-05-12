@@ -10,18 +10,23 @@ public class Main {
 
         Rover rover = new Rover(xCoordinate,yCoordinate, directionRover);
 
-        System.out.println("**** Current Position ****");
+        System.out.println("**** Rover Current Position ****");
         System.out.println(rover.currentPosition());
 
+ //        **** Temporal code for checking code purposes *****
 
-////        **** Temporal code for checking code purposes *****
         System.out.println("**** Move Rover Forward ****");
         System.out.println(rover.move());
 
-//
         System.out.println("**** Rover Turn Left****");
-////        Problem:  Its not recognizing "N" direction and therefore its not changing direction when turned left.  Why is not recognizing direction to be "N"?
         System.out.println(rover.turnLeft());
 
+        System.out.println("**** Rover Multiple Move and new position after****");
+        System.out.println("Rover starting position: ");
+        System.out.println(rover.currentPosition());
+        rover.move();
+        rover.turnLeft();
+        rover.move();
+        System.out.println(rover.currentPosition());
     }
 }
