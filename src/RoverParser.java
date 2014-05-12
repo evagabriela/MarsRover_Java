@@ -42,7 +42,19 @@ public class RoverParser {
         }
     }
 
-    public List<Coordinate> getCoordinates() {
-        return coordinates;
+    public Integer getXCoordinate(){
+        String xCoordinate = coordinates.get(0).x;
+        Integer xCoordinateNum = Integer.parseInt(xCoordinate);
+        return xCoordinateNum;
+    }
+
+    public Integer getYCoordinate(){
+        String yCoordinate = coordinates.get(0).y;
+        Integer yCoordinateNum = Integer.parseInt(yCoordinate);
+        return yCoordinateNum;
+    }
+
+    public String getDirection(){
+        return coordinates.get(0).direction;
     }
 }
