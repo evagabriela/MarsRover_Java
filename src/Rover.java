@@ -40,16 +40,16 @@ public class Rover {
     }
 
     public String turnRight() {
-        if( direction == "N"){
+        if (direction.equals("N")) {
             direction = "E";
-        } else if(direction == "S"){
-            direction = "W";
-        } else if(direction == "E"){
+        } else if (direction.equals("S")) {
+            direction.equals("W");
+        } else if (direction.equals("E")) {
             direction = "S";
-        } else{
+        } else {
             direction = "N";
         }
         return currentPosition();
     }
+ }
 
-}
