@@ -26,10 +26,13 @@ public class RoverParser {
             while ((line = bufferReader.readLine()) != null) {
 //                System.out.println(line);
 
+//                **** To create coordinate Object ****
 //                Adding each element to an array of Strings call linePieces
                 String[] linePieces = line.split(" ");
 
                 Coordinate coordinateArray = new Coordinate(linePieces[0], linePieces[1], linePieces[2]);
+
+//                *** Add the coordinate object to the coordinates list ***
                 coordinates.add(coordinateArray);
 //             Above code is same as: coordinates.add(new Coordinate(linePieces[0], linePieces[1], linePieces[2]));
 

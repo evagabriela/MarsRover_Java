@@ -3,9 +3,14 @@
  */
 public class Plateau {
 
+    private final int height;
+    private final int width;
 
-    public Plateau(){
+//     the first line on the file is the size of the grid
 
+    public Plateau(int height, int width){
+        this.height = height;
+        this.width = width;
     }
 
     public void add(Rover rover1) {
