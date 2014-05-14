@@ -11,9 +11,6 @@ public class Plateau {
         this.width = width;
     }
 
-    public int getPlateauHeight() {
-        return height;
-    }
 
     @Override
     public boolean equals(Object object){
