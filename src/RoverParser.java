@@ -31,7 +31,6 @@ public class RoverParser {
             BufferedReader bufferReader = new BufferedReader(inputFile);
             String line;
             line = bufferReader.readLine();
-            createPlateau(line);
 
             while ((line = bufferReader.readLine()) != null) {
                 String direction = bufferReader.readLine();
@@ -40,9 +39,8 @@ public class RoverParser {
             bufferReader.close();
     }
 
-    public Plateau createPlateau(String line){
-        String[] linePlateauPieces = line.split(" ");
-
+    public Plateau createPlateau() throws IOException {
+        String[] linePlateauPieces = getPlateauCoordinates().split(" ");
         String height = linePlateauPieces[1];
         String width = linePlateauPieces[0];
 
@@ -51,5 +49,18 @@ public class RoverParser {
 
         plateau = new Plateau(widthNum, heightNum);
         return plateau;
+    }
+
+    public String getPlateauCoordinates() throws IOException {
+        FileReader inputFile = new FileReader(fileName);
+        BufferedReader bufferReader = new BufferedReader(inputFile);
+        String line;
+        line = bufferReader.readLine();
+        return line;
+    }
+
+    public String getRoverInitialLocationDirection() throws IOException {
+
+        return null;
     }
 }

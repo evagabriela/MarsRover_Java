@@ -58,22 +58,25 @@ public class Rover {
 
     @Override
     public boolean equals(Object o) {
-
         if (this == o) return true;
-        if (this.x == ((Rover) o).x && this.y == ((Rover) o).y){
+        if (o == null || getClass() != o.getClass()) return false;
 
-            return true;
-        } else {
-            return false;
-        }
+        Rover rover = (Rover) o;
+
+        if (!direction.equals(rover.direction)) return false;
+//        if (!instructions.equals(rover.instructions)) return false;
+        if (!x.equals(rover.x)) return false;
+        if (!y.equals(rover.y)) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        int result = x != null ? x.hashCode() : 0;
-        result = 31 * result + (y != null ? y.hashCode() : 0);
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
-        result = 31 * result + (instructions != null ? instructions.hashCode() : 0);
+        int result = x.hashCode();
+        result = 31 * result + y.hashCode();
+        result = 31 * result + direction.hashCode();
+        result = 31 * result + instructions.hashCode();
         return result;
     }
 }
