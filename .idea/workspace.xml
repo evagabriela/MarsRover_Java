@@ -35,7 +35,7 @@
     <favorites_list name="MarsRover" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5230906">
+    <splitter split-orientation="horizontal" split-proportion="0.6865009">
       <split-first>
         <leaf>
           <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
@@ -71,11 +71,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RoverParser.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="RoverParser.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.4949324" vertical-offset="0" max-vertical-offset="1170">
-                  <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.9268293" vertical-offset="0" max-vertical-offset="1035">
+                  <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#391#392#0" expanded="true" />
@@ -124,7 +124,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PlateauTest.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="PlateauTest.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/PlateauTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.02388535" vertical-offset="0" max-vertical-offset="628">
@@ -159,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/Rover.java" />
         <option value="$PROJECT_DIR$/resources/sampleInput.txt" />
         <option value="$PROJECT_DIR$/test/RoverParserTest.java" />
-        <option value="$PROJECT_DIR$/src/RoverParser.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/RoverParser.java" />
       </list>
     </option>
   </component>
@@ -573,12 +573,12 @@
       <workItem from="1399495951343" duration="2984000" />
       <workItem from="1399508008369" duration="19529000" />
       <workItem from="1399595255028" duration="22746000" />
-      <workItem from="1399919922122" duration="27287000" />
+      <workItem from="1399919922122" duration="27864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72546000" />
+    <option name="totallyTimeSpent" value="73123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="49" width="1440" height="790" extended-state="0" />
@@ -812,14 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
@@ -831,6 +823,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/PlateauTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02388535" vertical-offset="0" max-vertical-offset="628">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Rover.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
@@ -839,23 +839,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4949324" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.9268293" vertical-offset="0" max-vertical-offset="1035">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
             <element signature="e#431#432#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/PlateauTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02388535" vertical-offset="0" max-vertical-offset="628">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
