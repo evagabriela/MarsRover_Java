@@ -6,6 +6,6 @@ public class Main {
 
         String fileName = "resources/sampleInput.txt";
         RoverParser roverParser = new RoverParser(fileName);
-        roverParser.parseFile();
+        roverParser.openFile();
     }
 }

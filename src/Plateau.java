@@ -13,9 +13,7 @@ public class Plateau {
 
     @Override
     public boolean equals(Object object){
-        if (this == object && object != null){
-            return true;
-        } else if (this.height == ((Plateau) object).height && this.width == ((Plateau) object).width ){
+        if (this == object && object != null || (this.height == ((Plateau) object).height && this.width == ((Plateau) object).width )) {
             return true;
         } else {
             return false;

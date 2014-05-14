@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Rover {
-    private Integer x;
-    private Integer y;
+    private int x;
+    private int y;
     private String direction;
     private ArrayList<String> instructions;
 
-    public Rover(Integer x, Integer y, String direction, ArrayList<String> instructions) {
+    public Rover(int x, int y, String direction, String instructions) {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.instructions = instructions;
+        this.instructions =  new ArrayList<String>(Arrays.asList(instructions.split("")));
     }
+
 
     public String currentPosition(){
         return x + " "+ y + " " + direction;
@@ -63,18 +65,18 @@ public class Rover {
 
         Rover rover = (Rover) o;
 
+        if (x != rover.x) return false;
+        if (y != rover.y) return false;
         if (!direction.equals(rover.direction)) return false;
-//        if (!instructions.equals(rover.instructions)) return false;
-        if (!x.equals(rover.x)) return false;
-        if (!y.equals(rover.y)) return false;
+        if (!instructions.equals(rover.instructions)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = x.hashCode();
-        result = 31 * result + y.hashCode();
+        int result = x;
+        result = 31 * result + y;
         result = 31 * result + direction.hashCode();
         result = 31 * result + instructions.hashCode();
         return result;

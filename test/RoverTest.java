@@ -1,9 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static junit.framework.Assert.assertEquals;
 
 public class RoverTest {
@@ -12,9 +9,8 @@ public class RoverTest {
 
     @Before
     public void setUp(){
-        ArrayList<String> directions =new ArrayList<String>(Arrays.asList("L", "M", "L"));
 
-        rover = new Rover(1, 3, "N", directions);
+        rover = new Rover(1, 3, "N", "LMLM");
     }
 
     @Test
