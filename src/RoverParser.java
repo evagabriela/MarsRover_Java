@@ -1,43 +1,35 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * Created by gzamudio on 5/9/14.
  */
 public class RoverParser {
-    private List<Coordinate> coordinates = new ArrayList<Coordinate>();
+    private String fileName;
+    private Plateau plateau;
+    private ArrayList<String> instructions;
+    private Rover rover;
 
-    public RoverParser(String fileName) {
-//        System.out.println("Reading File from Java code");
-        //Name of the file
+    public RoverParser(String fileName){
+        this.fileName = fileName;
+    }
+
+    public void parseFile() {
         try {
-            //Create object of FileReader
             FileReader inputFile = new FileReader(fileName);
-
-            //Instantiate the BufferedReader Class
             BufferedReader bufferReader = new BufferedReader(inputFile);
-
-            //Variable to hold the one line data
             String line;
+            line = bufferReader.readLine();
+            createPlateau(line);
 
-            // Read file line by line and print on the console
             while ((line = bufferReader.readLine()) != null) {
-//                System.out.println(line);
-
-//                **** To create coordinate Object ****
-//                Adding each element to an array of Strings call linePieces
-                String[] linePieces = line.split(" ");
-
-                Coordinate coordinateArray = new Coordinate(linePieces[0], linePieces[1], linePieces[2]);
-
-//                *** Add the coordinate object to the coordinates list ***
-                coordinates.add(coordinateArray);
-//             Above code is same as: coordinates.add(new Coordinate(linePieces[0], linePieces[1], linePieces[2]));
-
+                String direction = bufferReader.readLine();
+                createRover(line, direction);
             }
-            //Close the buffer reader
             bufferReader.close();
         } catch (Exception e) {
             System.out.println("Error while reading file line by line:"
@@ -45,19 +37,27 @@ public class RoverParser {
         }
     }
 
-    public Integer getXCoordinate(){
-        String xCoordinate = coordinates.get(0).x;
-        Integer xCoordinateNum = Integer.parseInt(xCoordinate);
-        return xCoordinateNum;
+
+    public Plateau createPlateau(String line){
+        String[] linePlateauPieces = line.split(" ");
+
+        String height = linePlateauPieces[1];
+        String width = linePlateauPieces[0];
+
+        int heightNum = parseInt(height);
+        int widthNum = parseInt(width);
+
+        plateau = new Plateau(widthNum, heightNum);
+        return plateau;
     }
 
-    public Integer getYCoordinate(){
-        String yCoordinate = coordinates.get(0).y;
-        Integer yCoordinateNum = Integer.parseInt(yCoordinate);
-        return yCoordinateNum;
-    }
+    public Rover createRover(String initialLocation, String direction) {
+        String[] linePieces = initialLocation.split(" ");
 
-    public String getDirection(){
-        return coordinates.get(0).direction;
+        instructions = new ArrayList<String>(Arrays.asList(direction.split("")));
+
+        rover = new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2],instructions);
+
+        return rover;
     }
 }
