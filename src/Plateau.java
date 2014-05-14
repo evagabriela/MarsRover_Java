@@ -11,7 +11,6 @@ public class Plateau {
         this.width = width;
     }
 
-
     @Override
     public boolean equals(Object object){
         if (this == object && object != null){

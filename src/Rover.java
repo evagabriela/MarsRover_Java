@@ -13,8 +13,6 @@ public class Rover {
         this.instructions = instructions;
     }
 
-
-
     public String currentPosition(){
         return x + " "+ y + " " + direction;
     }

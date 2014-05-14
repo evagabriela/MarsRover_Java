@@ -12,9 +12,9 @@ public class RoverTest {
 
     @Before
     public void setUp(){
-        ArrayList<String> direction =new ArrayList<String>(Arrays.asList("L", "M", "L"));
+        ArrayList<String> directions =new ArrayList<String>(Arrays.asList("L", "M", "L"));
 
-        rover = new Rover(1, 3, "N", direction);
+        rover = new Rover(1, 3, "N", directions);
     }
 
     @Test
