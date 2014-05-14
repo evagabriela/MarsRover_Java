@@ -1,13 +1,19 @@
-public class Rover {
-    public   Integer x;
-    public Integer y;
-    public String direction;
+import java.util.ArrayList;
 
-    public Rover(Integer x, Integer y, String direction) {
+public class Rover {
+    private Integer x;
+    private Integer y;
+    private String direction;
+    private ArrayList<String> instructions;
+
+    public Rover(Integer x, Integer y, String direction, ArrayList<String> instructions) {
         this.x = x;
         this.y = y;
         this.direction = direction;
+        this.instructions = instructions;
     }
+
+
 
     public String currentPosition(){
         return x + " "+ y + " " + direction;
@@ -51,5 +57,26 @@ public class Rover {
         }
         return currentPosition();
     }
- }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (this.x == ((Rover) o).x && this.y == ((Rover) o).y){
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x != null ? x.hashCode() : 0;
+        result = 31 * result + (y != null ? y.hashCode() : 0);
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        result = 31 * result + (instructions != null ? instructions.hashCode() : 0);
+        return result;
+    }
+}
 
