@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+
 /**
  * Created by gzamudio on 5/12/14.
  */
 public class Plateau {
-
+    ArrayList<Rover> roverList;
     private final int height;
     private final int width;
 
     public Plateau(int height, int width){
         this.height = height;
         this.width = width;
+        this.roverList = new ArrayList<Rover>();
     }
-
 
     public boolean isSpaceValid(int x, int y) {
         if ((x > height || y > width) || (x < 0 || y < 0)){
@@ -20,7 +22,18 @@ public class Plateau {
         }
     }
 
-    
+    public boolean addRover(Rover rover) {
+
+        for (int i = 0; i < roverList.size(); i++){
+            String roverPosition = roverList.get(i).currentPosition();
+
+            if (roverPosition == rover.currentPosition()){
+                return false;
+            }
+        }
+        roverList.add(rover);
+        return true;
+    }
 
     @Override
     public boolean equals(Object object){

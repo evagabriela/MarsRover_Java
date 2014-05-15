@@ -19,7 +19,6 @@ public class RoverParserTest {
 
     @Test
     public void shouldCreatePlateauWithParsingInput() throws Exception {
-
         BufferedReader bufferedReader = mock(BufferedReader.class);
         when(bufferedReader.readLine()).thenReturn("5 5").thenReturn("1 2 N").thenReturn("LMLML").thenReturn(null);
         RoverParser spy = spy(roverparser);

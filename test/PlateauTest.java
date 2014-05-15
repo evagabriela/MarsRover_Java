@@ -1,8 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
+import static org.powermock.api.mockito.PowerMockito.mock;
+import static org.powermock.api.mockito.PowerMockito.when;
 
 public class PlateauTest {
 
@@ -31,12 +34,23 @@ public class PlateauTest {
 
     @Test
     public void shouldAddRoverIfSpaceIsAvailable(){
+        Rover rover = mock(Rover.class);
+        when(rover.currentPosition()).thenReturn("1 2 N");
+
+        assertEquals(plateau.addRover(rover), true);
 
     }
 
     @Test
     public void shouldNotAddRoverIfSpaceIsNotAvailable() {
+        Rover rover = mock(Rover.class);
+        when(rover.currentPosition()).thenReturn("1 2 N");
+        plateau.addRover(rover);
 
+        Rover rover2 = mock(Rover.class);
+        when(rover2.currentPosition()).thenReturn("1 2 N");
+
+        assertEquals(plateau.addRover(rover2), false);
     }
 
 
