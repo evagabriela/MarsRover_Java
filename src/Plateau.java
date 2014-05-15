@@ -11,6 +11,17 @@ public class Plateau {
         this.width = width;
     }
 
+
+    public boolean isSpaceValid(int x, int y) {
+        if ((x > height || y > width) || (x < 0 || y < 0)){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    
+
     @Override
     public boolean equals(Object object){
         if (this == object && object != null || (this.height == ((Plateau) object).height && this.width == ((Plateau) object).width )) {
