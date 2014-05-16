@@ -11,14 +11,15 @@ public class RoverParser {
         this.fileName = fileName;
     }
 
-    public void openFile() throws IOException {
+    public Plateau openFile() throws IOException {
         FileReader inputFile = new FileReader(fileName);
         BufferedReader bufferReader = new BufferedReader(inputFile);
-        parseFile(bufferReader);
+        Plateau plateau = parseFile(bufferReader);
         bufferReader.close();
+        return plateau;
     }
 
-    public void parseFile(BufferedReader bufferReader) throws IOException {
+    public Plateau parseFile(BufferedReader bufferReader) throws IOException {
         String line;
         line = bufferReader.readLine();
         Plateau plateau = createPlateau(line);
@@ -27,6 +28,7 @@ public class RoverParser {
             String instructions = bufferReader.readLine();
             plateau.addRover(createRover(line, instructions));
         }
+        return plateau;
     }
 
     public Rover createRover(String initialLocation, String instructions) {
