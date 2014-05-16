@@ -1,17 +1,15 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Rover {
     private int x;
     private int y;
     private String direction;
-    private ArrayList<String> instructions;
+    private char[] instructions;
 
     public Rover(int x, int y, String direction, String instructions) {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.instructions =  new ArrayList<String>(Arrays.asList(instructions.split("")));
+        this.instructions =  instructions.toCharArray();
+
     }
 
     public String currentPosition(){
@@ -79,6 +77,23 @@ public class Rover {
         result = 31 * result + direction.hashCode();
         result = 31 * result + instructions.hashCode();
         return result;
+    }
+
+    public void runInstruction() {
+        for (int i = 0; i < instructions.length; i++){
+            char instructionChar = instructions[i];
+
+            String instruction = String.valueOf(instructionChar);
+
+            if (instruction.equals("M")){
+                move();
+            } else if (instruction.equals("R")){
+                turnRight();
+            } else {
+                turnLeft();
+            }
+        }
+
     }
 }
 

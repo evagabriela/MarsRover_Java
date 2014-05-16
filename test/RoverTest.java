@@ -43,4 +43,11 @@ public class RoverTest {
         rover.move();
         assertEquals(rover.currentPosition(), "0 4 W");
     }
+
+    @Test
+    public void shouldExecuteEachRoverInstruction(){
+        rover.runInstruction();
+        assertEquals("0 2 S", rover.currentPosition());
+
+    }
 }
