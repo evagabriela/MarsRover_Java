@@ -51,4 +51,9 @@ public class Plateau {
     }
 
 
+    public void runRoverInstructions() {
+    }
+
+    public void showRoverFinalPositions() {
+    }
 }

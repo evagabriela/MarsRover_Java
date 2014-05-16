@@ -9,12 +9,12 @@ public class Main {
 
 //      Calling this method also calls the parseFile which creates
 //      the Plateau and the Rover
-        roverParser.openFile();
+        Plateau plateau =  roverParser.openFile();
+        plateau.runRoverInstructions();
+        plateau.showRoverFinalPositions();
 
-//        roverParser.finalPositions();
-
-//
-//        System.out.println(finalPosition);
 
     }
+
+
 }
