@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -64,6 +65,20 @@ public class RoverParserTest {
 
         assertEquals(plateau, roverparser.createPlateau("5 5"));
     }
+
+     @Test
+    public void shouldCreateAListOfRoverObjects() throws IOException {
+         BufferedReader bufferedReader = mock(BufferedReader.class);
+         when(bufferedReader.readLine()).thenReturn("5 5").thenReturn("1 2 N").thenReturn("LMLML").thenReturn("2 3 N").thenReturn("MMMMM").thenReturn(null);
+         roverparser.parseFile(bufferedReader);
+
+         ArrayList<Rover> roverList = new ArrayList<Rover>();
+         roverList.add(roverparser.createRover("1 2 N", "LMLML"));
+         roverList.add(roverparser.createRover("2 3 N", "MMMMM"));
+
+        assertEquals(roverList, roverparser.getRoversList());
+     }
+
 
 
 }

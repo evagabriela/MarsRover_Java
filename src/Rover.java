@@ -14,7 +14,6 @@ public class Rover {
         this.instructions =  new ArrayList<String>(Arrays.asList(instructions.split("")));
     }
 
-
     public String currentPosition(){
         return x + " "+ y + " " + direction;
     }

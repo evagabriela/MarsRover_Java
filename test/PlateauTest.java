@@ -10,11 +10,12 @@ import static org.powermock.api.mockito.PowerMockito.when;
 public class PlateauTest {
 
     private Plateau plateau;
+    private Rover rover;
 
     @Before
     public void setUp(){
         plateau = new Plateau(5,5);
-
+        rover = mock(Rover.class);
     }
 
     @Test
@@ -34,16 +35,13 @@ public class PlateauTest {
 
     @Test
     public void shouldAddRoverIfSpaceIsAvailable(){
-        Rover rover = mock(Rover.class);
         when(rover.currentPosition()).thenReturn("1 2 N");
 
         assertEquals(plateau.addRover(rover), true);
-
     }
 
     @Test
     public void shouldNotAddRoverIfSpaceIsNotAvailable() {
-        Rover rover = mock(Rover.class);
         when(rover.currentPosition()).thenReturn("1 2 N");
         plateau.addRover(rover);
 

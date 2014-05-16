@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
@@ -8,9 +9,11 @@ public class RoverParser {
     private String fileName;
     private Plateau plateau;
     private Rover rover;
+    private ArrayList<Rover>roversList;
 
     public RoverParser(String fileName){
         this.fileName = fileName;
+        this.roversList = new ArrayList<Rover>();
     }
 
     public void openFile() throws IOException {
@@ -18,7 +21,6 @@ public class RoverParser {
         BufferedReader bufferReader = new BufferedReader(inputFile);
         parseFile(bufferReader);
         bufferReader.close();
-
     }
 
     public void parseFile(BufferedReader bufferReader) throws IOException {
@@ -27,8 +29,9 @@ public class RoverParser {
         createPlateau(line);
 
         while ((line = bufferReader.readLine()) != null) {
-            String direction = bufferReader.readLine();
-            createRover(line, direction);
+            String instructions = bufferReader.readLine();
+//            createRover(line, instructions);
+            roversList.add(createRover(line, instructions));
         }
     }
 
@@ -37,7 +40,6 @@ public class RoverParser {
         rover = new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2],instructions);
         return rover;
     }
-
 
     public Plateau createPlateau(String line)  {
         String[] linePlateauPieces = line.split(" ");
@@ -53,5 +55,7 @@ public class RoverParser {
     }
 
 
-
+    public ArrayList<Rover> getRoversList() {
+        return roversList;
+    }
 }
