@@ -22,11 +22,9 @@ public class RoverParserTest {
         BufferedReader bufferedReader = mock(BufferedReader.class);
         when(bufferedReader.readLine()).thenReturn("5 5").thenReturn("1 2 N").thenReturn("LMLML").thenReturn(null);
         RoverParser spy = spy(roverparser);
-
         spy.parseFile(bufferedReader);
 
         verify(spy).createPlateau("5 5");
-
     }
 
     @Test

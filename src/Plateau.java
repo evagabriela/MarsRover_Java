@@ -34,6 +34,19 @@ public class Plateau {
         return true;
     }
 
+    public void runRoverInstructions() {
+        for (int i = 0; i<roverList.size(); i++){
+            roverList.get(i).runInstruction();
+        }
+    }
+
+    public void showRoverFinalPositions() {
+        for (int i = 0; i<roverList.size(); i++){
+
+            System.out.println(roverList.get(i).currentPosition());
+        }
+    }
+
     @Override
     public boolean equals(Object object){
         if (this == object && object != null || (this.height == ((Plateau) object).height && this.width == ((Plateau) object).width )) {
@@ -48,19 +61,5 @@ public class Plateau {
         int result = height;
         result = 31 * result + width;
         return result;
-    }
-
-
-    public void runRoverInstructions() {
-        for (int i = 0; i<roverList.size(); i++){
-            roverList.get(i).runInstruction();
-        }
-    }
-
-    public void showRoverFinalPositions() {
-        for (int i = 0; i<roverList.size(); i++){
-
-            System.out.println(roverList.get(i).currentPosition());
-        }
     }
 }
