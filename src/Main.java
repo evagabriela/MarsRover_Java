@@ -13,7 +13,6 @@ public class Main {
 
 //        roverParser.finalPositions();
 
-//        String finalPosition = roverParser.start(fileName);
 //
 //        System.out.println(finalPosition);
 

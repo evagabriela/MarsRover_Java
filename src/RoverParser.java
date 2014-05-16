@@ -1,19 +1,14 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
 public class RoverParser {
     private String fileName;
-    private Plateau plateau;
-    private Rover rover;
-    private ArrayList<Rover>roversList;
 
     public RoverParser(String fileName){
         this.fileName = fileName;
-        this.roversList = new ArrayList<Rover>();
     }
 
     public void openFile() throws IOException {
@@ -26,19 +21,17 @@ public class RoverParser {
     public void parseFile(BufferedReader bufferReader) throws IOException {
         String line;
         line = bufferReader.readLine();
-        createPlateau(line);
+        Plateau plateau = createPlateau(line);
 
         while ((line = bufferReader.readLine()) != null) {
             String instructions = bufferReader.readLine();
-//            createRover(line, instructions);
-            roversList.add(createRover(line, instructions));
+            plateau.addRover(createRover(line, instructions));
         }
     }
 
     public Rover createRover(String initialLocation, String instructions) {
         String[] linePieces = initialLocation.split(" ");
-        rover = new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2],instructions);
-        return rover;
+        return new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2], instructions);
     }
 
     public Plateau createPlateau(String line)  {
@@ -50,12 +43,7 @@ public class RoverParser {
         int heightNum = parseInt(height);
         int widthNum = parseInt(width);
 
-        plateau = new Plateau(widthNum, heightNum);
-        return plateau;
+        return new Plateau(widthNum, heightNum);
     }
 
-
-    public ArrayList<Rover> getRoversList() {
-        return roversList;
-    }
 }
