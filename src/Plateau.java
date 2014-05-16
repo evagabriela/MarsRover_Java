@@ -52,8 +52,15 @@ public class Plateau {
 
 
     public void runRoverInstructions() {
+        for (int i = 0; i<roverList.size(); i++){
+            roverList.get(i).runInstruction();
+        }
     }
 
     public void showRoverFinalPositions() {
+        for (int i = 0; i<roverList.size(); i++){
+
+            System.out.println(roverList.get(i).currentPosition());
+        }
     }
 }

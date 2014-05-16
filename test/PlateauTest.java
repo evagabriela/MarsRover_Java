@@ -4,6 +4,7 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
+import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.mock;
 import static org.powermock.api.mockito.PowerMockito.when;
 
@@ -51,5 +52,18 @@ public class PlateauTest {
         assertEquals(plateau.addRover(rover2), false);
     }
 
+     @Test
+    public void shouldTellEachRoverToRunItsInstructions(){
+         plateau.addRover(rover);
+         plateau.runRoverInstructions();
+         verify(rover).runInstruction();
+     }
+
+     @Test
+    public void shouldTellEachRoverToRunItsFinalPosition(){
+         plateau.addRover(rover);
+         plateau.showRoverFinalPositions();
+         verify(rover).currentPosition();
+     }
 
 }
