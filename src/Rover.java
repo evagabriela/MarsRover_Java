@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Rover {
     private int x;
     private int y;
@@ -30,6 +32,7 @@ public class Rover {
     }
 
     public String turnLeft() {
+
         if( direction.equals("N")){
             direction = "W";
         } else if(direction.equals("S")){
@@ -46,13 +49,29 @@ public class Rover {
         if (direction.equals("N")) {
             direction = "E";
         } else if (direction.equals("S")) {
-            direction.equals("W");
+            direction = "W";
         } else if (direction.equals("E")) {
             direction = "S";
         } else {
             direction = "N";
         }
         return currentPosition();
+    }
+
+    public void runInstruction() {
+        for (int i = 0; i < instructions.length; i++) {
+            char instructionChar = instructions[i];
+
+            String instruction = String.valueOf(instructionChar);
+
+                if (instruction.equals("R")) {
+                    turnRight();
+                } else if (instruction.equals("L")) {
+                    turnLeft();
+                } else {
+                    move();
+                }
+            }
     }
 
     @Override
@@ -65,7 +84,7 @@ public class Rover {
         if (x != rover.x) return false;
         if (y != rover.y) return false;
         if (!direction.equals(rover.direction)) return false;
-        if (!instructions.equals(rover.instructions)) return false;
+        if (!Arrays.equals(instructions, rover.instructions)) return false;
 
         return true;
     }
@@ -75,25 +94,9 @@ public class Rover {
         int result = x;
         result = 31 * result + y;
         result = 31 * result + direction.hashCode();
-        result = 31 * result + instructions.hashCode();
+        result = 31 * result + Arrays.hashCode(instructions);
         return result;
     }
-
-    public void runInstruction() {
-        for (int i = 0; i < instructions.length; i++){
-            char instructionChar = instructions[i];
-
-            String instruction = String.valueOf(instructionChar);
-
-            if (instruction.equals("M")){
-                move();
-            } else if (instruction.equals("R")){
-                turnRight();
-            } else {
-                turnLeft();
-            }
-        }
-
-    }
 }
+
 

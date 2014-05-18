@@ -9,7 +9,6 @@ public class RoverTest {
 
     @Before
     public void setUp(){
-
         rover = new Rover(1, 3, "N", "LMLM");
     }
 

@@ -63,5 +63,4 @@ public class RoverParserTest {
         assertEquals(plateau, roverparser.createPlateau("5 5"));
     }
 
-
 }

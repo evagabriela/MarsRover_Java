@@ -9,6 +9,8 @@ public class Main {
         Plateau plateau =  roverParser.openFile();
 
         plateau.runRoverInstructions();
+
         plateau.showRoverFinalPositions();
+
     }
 }
