@@ -39,11 +39,17 @@ public class Plateau {
         }
     }
 
-    public void showRoverFinalPositions() {
-
+    public String showRoverFinalPositions() {
+        ArrayList<String> finalPosition = new ArrayList<String>();
+        String finalPositionRover = "";
         for (int i = 0; i<roverList.size(); i++){
-            System.out.println(roverList.get(i).currentPosition());
+            finalPosition.add(roverList.get(i).currentPosition());
         }
+
+        for (String s : finalPosition){
+            finalPositionRover += s + "\n";
+        }
+        return finalPositionRover;
     }
 
     @Override

@@ -61,7 +61,6 @@ public class PlateauTest {
 
      @Test
     public void shouldTellEachRoverToRunItsFinalPosition(){
-         when(rover.currentPosition()).thenReturn("");
          plateau.addRover(rover);
          plateau.showRoverFinalPositions();
 

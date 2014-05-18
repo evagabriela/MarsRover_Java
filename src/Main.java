@@ -10,7 +10,7 @@ public class Main {
 
         plateau.runRoverInstructions();
 
-        plateau.showRoverFinalPositions();
+        System.out.println( plateau.showRoverFinalPositions());
 
     }
 }
