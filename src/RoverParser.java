@@ -5,7 +5,7 @@ import java.io.IOException;
 import static java.lang.Integer.parseInt;
 
 public class RoverParser {
-    private String fileName;
+    private final String fileName;
 
     public RoverParser(String fileName){
         this.fileName = fileName;
@@ -42,10 +42,10 @@ public class RoverParser {
         String height = linePlateauPieces[1];
         String width = linePlateauPieces[0];
 
-        int heightNum = parseInt(height);
         int widthNum = parseInt(width);
+        int heightNum = parseInt(height);
 
-        return new Plateau(widthNum, heightNum);
+        return new Plateau(heightNum, widthNum);
     }
 
 }

@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
-/**
- * Created by gzamudio on 5/12/14.
- */
 public class Plateau {
-    ArrayList<Rover> roverList;
+    private final ArrayList<Rover> roverList;
     private final int height;
     private final int width;
 
@@ -26,7 +23,9 @@ public class Plateau {
             }
         }
 
-        if ((x > height || y > width) || (x < 0 || y < 0)){
+        if ((x > height || y > width)) {
+            return false;
+        } else if ((x < 0 || y < 0)) {
             return false;
         }
         return true;
@@ -38,7 +37,7 @@ public class Plateau {
         if (isSpaceValid(x,y)){
             for (int i = 0; i < roverList.size(); i++){
                 String roverPosition = roverList.get(i).currentPosition();
-                if (roverPosition == rover.currentPosition()){
+                if (roverPosition.equals(rover.currentPosition())){
                     return false;
                 }
             }
@@ -64,7 +63,9 @@ public class Plateau {
 
     @Override
     public boolean equals(Object object){
-        if (this == object && object != null || (this.height == ((Plateau) object).height && this.width == ((Plateau) object).width )) {
+        if (this == object && object != null) {
+            return true;
+        } else if ((this.height == ((Plateau) object).height && this.width == ((Plateau) object).width)) {
             return true;
         } else {
             return false;

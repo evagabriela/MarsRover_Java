@@ -4,7 +4,7 @@ public class Rover {
     private int x;
     private int y;
     private String direction;
-    private char[] instructions;
+    private final char[] instructions;
 
     public Rover(int x, int y, String direction, String instructions) {
         this.x = x;
@@ -27,7 +27,7 @@ public class Rover {
     }
 
 
-    public String move() {
+    public void move() {
        if( direction.equals("N") ){
             y += 1;
         } else if(direction.equals("S")){
@@ -37,10 +37,9 @@ public class Rover {
        } else{
            x -= 1;
        }
-        return currentPosition();
     }
 
-    public String turnLeft() {
+    public void turnLeft() {
 
         if( direction.equals("N")){
             direction = "W";
@@ -51,10 +50,9 @@ public class Rover {
         } else{
             direction = "S";
         }
-        return currentPosition();
     }
 
-    public String turnRight() {
+    public void turnRight() {
         if (direction.equals("N")) {
             direction = "E";
         } else if (direction.equals("S")) {
@@ -64,7 +62,6 @@ public class Rover {
         } else {
             direction = "N";
         }
-        return currentPosition();
     }
 
     public void runInstruction() {
