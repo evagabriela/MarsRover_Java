@@ -40,16 +40,12 @@ public class Plateau {
     }
 
     public String showRoverFinalPositions() {
-        ArrayList<String> finalPosition = new ArrayList<String>();
-        String finalPositionRover = "";
+        String finalPosRover = "";
         for (int i = 0; i<roverList.size(); i++){
-            finalPosition.add(roverList.get(i).currentPosition());
+            finalPosRover += (roverList.get(i).currentPosition()) + "\n";
         }
 
-        for (String s : finalPosition){
-            finalPositionRover += s + "\n";
-        }
-        return finalPositionRover;
+        return finalPosRover;
     }
 
     @Override
