@@ -23,13 +23,18 @@ public class Plateau {
     }
 
     public boolean addRover(Rover rover) {
-        for (int i = 0; i < roverList.size(); i++){
-            String roverPosition = roverList.get(i).currentPosition();
-            if (roverPosition == rover.currentPosition()){
-                return false;
+        int x = rover.xCoordinate();
+        int y = rover.yCoordinate();
+
+        if (isSpaceValid(x,y)){
+            for (int i = 0; i < roverList.size(); i++){
+                String roverPosition = roverList.get(i).currentPosition();
+                if (roverPosition == rover.currentPosition()){
+                    return false;
+                }
             }
+            roverList.add(rover);
         }
-        roverList.add(rover);
         return true;
     }
 

@@ -18,6 +18,15 @@ public class Rover {
         return x + " "+ y + " " + direction;
     }
 
+    public int xCoordinate(){
+        return x;
+    }
+
+    public int yCoordinate(){
+        return y;
+    }
+
+
     public String move() {
        if( direction.equals("N") ){
             y += 1;

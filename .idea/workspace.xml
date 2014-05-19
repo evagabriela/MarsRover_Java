@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="502bb5ca-e1aa-4ba5-866b-31cad2611d39" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Plateau.java" afterPath="$PROJECT_DIR$/src/Plateau.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rover.java" afterPath="$PROJECT_DIR$/src/Rover.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MarsRover.iws" />
@@ -31,8 +33,8 @@
           <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+                  <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -41,11 +43,15 @@
           <file leaf-file-name="Rover.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Rover.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-                  <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
+                  <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
                   <folding>
                     <element signature="e#397#398#0" expanded="true" />
                     <element signature="e#448#449#0" expanded="true" />
+                    <element signature="e#479#480#0" expanded="true" />
+                    <element signature="e#503#504#0" expanded="true" />
+                    <element signature="e#534#535#0" expanded="true" />
+                    <element signature="e#558#559#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -54,8 +60,8 @@
           <file leaf-file-name="Plateau.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Plateau.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.64855075" vertical-offset="377" max-vertical-offset="1080">
-                  <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.54347825" vertical-offset="195" max-vertical-offset="1155">
+                  <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -71,6 +77,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="RoverParser.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="765">
+                  <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -78,7 +94,7 @@
           <file leaf-file-name="RoverParserTest.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/RoverParserTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1065">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
                   <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
                   <folding />
                 </state>
@@ -88,18 +104,8 @@
           <file leaf-file-name="PlateauTest.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/PlateauTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="915">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
                   <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RoverParser.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="855">
-                  <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -108,11 +114,13 @@
           <file leaf-file-name="RoverTest.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8097826" vertical-offset="1308" max-vertical-offset="1860">
+                <state vertical-scroll-proportion="0.8141593" vertical-offset="1325" max-vertical-offset="1890">
                   <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
                   <folding>
                     <element signature="e#188#189#0" expanded="true" />
                     <element signature="e#240#241#0" expanded="true" />
+                    <element signature="e#303#304#0" expanded="true" />
+                    <element signature="e#364#365#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -139,11 +147,11 @@
         <option value="$PROJECT_DIR$/test/DirectionTest.java" />
         <option value="$PROJECT_DIR$/src/RoverParser.java" />
         <option value="$PROJECT_DIR$/test/RoverParserTest.java" />
-        <option value="$PROJECT_DIR$/src/Rover.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/PlateauTest.java" />
         <option value="$PROJECT_DIR$/resources/sampleInput.txt" />
         <option value="$PROJECT_DIR$/test/RoverTest.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Rover.java" />
         <option value="$PROJECT_DIR$/src/Plateau.java" />
       </list>
     </option>
@@ -200,6 +208,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MarsRover" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarsRover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarsRover" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,7 +294,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in MarsRover">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="RoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MarsRover" />
@@ -577,8 +599,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in MarsRover" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in MarsRover" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.RoverTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RoverTest.shouldMoveRightFourTimes" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.RoverTest.shouldMoveLeftFourTimes" />
@@ -601,12 +623,12 @@
       <workItem from="1400108848105" duration="36738000" />
       <workItem from="1400277134816" duration="6057000" />
       <workItem from="1400284325622" duration="4182000" />
-      <workItem from="1400375680440" duration="3437000" />
+      <workItem from="1400375680440" duration="4620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146171000" />
+    <option name="totallyTimeSpent" value="147354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="73" width="1440" height="874" extended-state="0" />
@@ -744,6 +766,8 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -763,6 +787,10 @@
           <folding>
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -814,6 +842,8 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,6 +863,10 @@
           <folding>
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -884,6 +918,8 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -903,6 +939,10 @@
           <folding>
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,6 +954,8 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -949,6 +991,10 @@
           <folding>
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -960,6 +1006,8 @@
           <folding>
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1060,18 +1108,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RoverParserTest.java">
+    <entry file="file://$PROJECT_DIR$/resources/sampleInput.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="855">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1084,48 +1124,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sampleInput.txt">
+    <entry file="file://$PROJECT_DIR$/src/RoverParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8097826" vertical-offset="1308" max-vertical-offset="1860">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-          <folding>
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="765">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rover.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RoverParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8141593" vertical-offset="1325" max-vertical-offset="1890">
+          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64855075" vertical-offset="377" max-vertical-offset="1080">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.54347825" vertical-offset="195" max-vertical-offset="1155">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding />
         </state>
       </provider>

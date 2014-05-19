@@ -7,7 +7,6 @@ public class Main {
         String fileName = "resources/sampleInput.txt";
         RoverParser roverParser = new RoverParser(fileName);
         Plateau plateau =  roverParser.openFile();
-
         plateau.runRoverInstructions();
 
         System.out.println( plateau.showRoverFinalPositions());
