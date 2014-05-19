@@ -15,17 +15,26 @@ public class Plateau {
     }
 
     public boolean isSpaceValid(int x, int y) {
+        String xCoordinate = String.valueOf(x);
+        String yCoordinate = String.valueOf(y);
+
+        for (int i = 0; i < roverList.size(); i++) {
+            String roverPosition = roverList.get(i).currentPosition();
+
+            if (roverPosition.contains(xCoordinate) || roverPosition.contains(yCoordinate)) {
+                return false;
+            }
+        }
+
         if ((x > height || y > width) || (x < 0 || y < 0)){
             return false;
-        } else {
-            return true;
         }
+        return true;
     }
 
     public boolean addRover(Rover rover) {
         int x = rover.xCoordinate();
         int y = rover.yCoordinate();
-
         if (isSpaceValid(x,y)){
             for (int i = 0; i < roverList.size(); i++){
                 String roverPosition = roverList.get(i).currentPosition();
