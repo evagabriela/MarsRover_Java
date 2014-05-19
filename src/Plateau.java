@@ -12,13 +12,12 @@ public class Plateau {
     }
 
     public boolean isSpaceValid(int x, int y) {
-        String xCoordinate = String.valueOf(x);
-        String yCoordinate = String.valueOf(y);
 
-        for (int i = 0; i < roverList.size(); i++) {
-            String roverPosition = roverList.get(i).currentPosition();
+        for (Rover rover: roverList) {
+            int roverXCoordinate = rover.xCoordinate();
+            int roverYCoordinate = rover.yCoordinate();
 
-            if (roverPosition.contains(xCoordinate) || roverPosition.contains(yCoordinate)) {
+            if (x == roverXCoordinate && y == roverYCoordinate){
                 return false;
             }
         }
@@ -35,27 +34,24 @@ public class Plateau {
         int x = rover.xCoordinate();
         int y = rover.yCoordinate();
         if (isSpaceValid(x,y)){
-            for (int i = 0; i < roverList.size(); i++){
-                String roverPosition = roverList.get(i).currentPosition();
-                if (roverPosition.equals(rover.currentPosition())){
-                    return false;
-                }
-            }
             roverList.add(rover);
+            return true;
+        } else {
+            return false;
         }
-        return true;
+
     }
 
     public void runRoverInstructions() {
-        for (int i = 0; i<roverList.size(); i++){
-            roverList.get(i).runInstruction();
+        for (Rover rover: roverList) {
+            rover.runInstruction();
         }
     }
 
     public String showRoverFinalPositions() {
         String finalPosRover = "";
-        for (int i = 0; i<roverList.size(); i++){
-            finalPosRover += (roverList.get(i).currentPosition()) + "\n";
+        for (Rover rover : roverList){
+            finalPosRover += (rover.currentPosition()) + "\n";
         }
 
         return finalPosRover;

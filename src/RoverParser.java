@@ -11,7 +11,7 @@ public class RoverParser {
         this.fileName = fileName;
     }
 
-    public Plateau openFile() throws IOException {
+    public Plateau plateauSetUp() throws IOException {
         FileReader inputFile = new FileReader(fileName);
         BufferedReader bufferReader = new BufferedReader(inputFile);
         Plateau plateau = parseFile(bufferReader);

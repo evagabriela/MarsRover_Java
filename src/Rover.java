@@ -11,7 +11,6 @@ public class Rover {
         this.y = y;
         this.direction = direction;
         this.instructions =  instructions.toCharArray();
-
     }
 
     public String currentPosition(){
@@ -26,8 +25,8 @@ public class Rover {
         return y;
     }
 
-
     public void move() {
+//        here is where I need to check if valid space
        if( direction.equals("N") ){
             y += 1;
         } else if(direction.equals("S")){
@@ -65,19 +64,19 @@ public class Rover {
     }
 
     public void runInstruction() {
-        for (int i = 0; i < instructions.length; i++) {
-            char instructionChar = instructions[i];
+        for (Character instruction : instructions) {
 
-            String instruction = String.valueOf(instructionChar);
+            String instructionString = String.valueOf(instruction);
 
-                if (instruction.equals("R")) {
-                    turnRight();
-                } else if (instruction.equals("L")) {
-                    turnLeft();
-                } else {
-                    move();
-                }
-            }
+                  if (instructionString.equals("R")) {
+                      turnRight();
+                  } else if (instructionString.equals("L")) {
+                      turnLeft();
+                  } else {
+                      move();
+                  }
+              }
+
     }
 
     @Override

@@ -99,7 +99,7 @@ public class RoverTest {
     }
 
     @Test
-    public void shouldMoveRightFourTimes(){
+    public void shouldMoveRightTwoTimes(){
         rover.turnRight();
         rover.turnRight();
         rover.turnRight();
@@ -107,18 +107,23 @@ public class RoverTest {
         assertEquals("1 3 N",rover.currentPosition());
     }
 
-    @Test
-    public void shouldProcessMoreThanOneCommand(){
-        rover.move();
-        rover.turnLeft();
-        rover.move();
-        assertEquals("0 4 W", rover.currentPosition());
-    }
 
     @Test
     public void shouldExecuteEachRoverInstruction(){
         rover.runInstruction();
         assertEquals("0 2 S", rover.currentPosition());
-
     }
+
+//    Need to add interface Command and create a class for each command.
+//    Therefore, Needs similar tests as below
+//    it test each command execution
+
+//    @Test
+//    public void shouldTurnRightWhenCommandIsR(){
+//        Rover rover1 = new Rover(0, 0, "N", "R");
+//
+//        rover1.runInstruction();
+
+//        verify(turnRightCommand).execute();
+//    }
 }
