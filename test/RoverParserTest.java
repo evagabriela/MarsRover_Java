@@ -10,11 +10,15 @@ import static org.mockito.Mockito.*;
 public class RoverParserTest {
     private String fileName;
     private RoverParser roverparser;
+    private Plateau plateau;
 
     @Before
     public void setUp() throws IOException {
         fileName = "abc";
         roverparser = new RoverParser(fileName);
+        plateau = mock(Plateau.class);
+        plateau = roverparser.createPlateau("5 5");
+
     }
 
     @Test
@@ -31,10 +35,12 @@ public class RoverParserTest {
     public void shouldCreateRoverWithParsingInput() throws IOException {
         BufferedReader bufferedReader = mock(BufferedReader.class);
         when(bufferedReader.readLine()).thenReturn("5 5").thenReturn("1 2 N").thenReturn("LMLML").thenReturn(null);
+
         RoverParser spy = spy(roverparser);
 
         spy.parseFile(bufferedReader);
-        verify(spy).createRover("1 2 N", "LMLML");
+
+        verify(spy).createRover("1 2 N", "LMLML", plateau);
     }
 
     @Test
@@ -44,16 +50,16 @@ public class RoverParserTest {
         RoverParser spy = spy(roverparser);
 
         spy.parseFile(bufferedReader);
-        verify(spy).createRover("1 2 N", "LMLML");
-        verify(spy).createRover("2 3 N", "MMMMM");
+        verify(spy).createRover("1 2 N", "LMLML", plateau);
+        verify(spy).createRover("2 3 N", "MMMMM", plateau);
 
     }
 
     @Test
     public void shouldCreateARoverObject() throws IOException {
-        Rover rover = new Rover(1, 2, "N", "LMLM");
+        Rover rover = new Rover(1, 2, "N", "LMLM", plateau);
 
-        assertEquals(rover, roverparser.createRover("1 2 N", "LMLM"));
+        assertEquals(rover, roverparser.createRover("1 2 N", "LMLM", plateau));
     }
 
     @Test

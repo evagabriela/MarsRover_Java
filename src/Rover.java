@@ -1,16 +1,18 @@
 import java.util.Arrays;
 
 public class Rover {
+    private final Plateau plateau;
     private int x;
     private int y;
     private String direction;
     private final char[] instructions;
 
-    public Rover(int x, int y, String direction, String instructions) {
+    public Rover(int x, int y, String direction, String instructions, Plateau plateau) {
         this.x = x;
         this.y = y;
         this.direction = direction;
         this.instructions =  instructions.toCharArray();
+        this.plateau = plateau;
     }
 
     public String currentPosition(){
@@ -88,18 +90,20 @@ public class Rover {
 
         if (x != rover.x) return false;
         if (y != rover.y) return false;
-        if (!direction.equals(rover.direction)) return false;
+        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
         if (!Arrays.equals(instructions, rover.instructions)) return false;
+        if (plateau != null ? !plateau.equals(rover.plateau) : rover.plateau != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = x;
+        int result = plateau != null ? plateau.hashCode() : 0;
+        result = 31 * result + x;
         result = 31 * result + y;
-        result = 31 * result + direction.hashCode();
-        result = 31 * result + Arrays.hashCode(instructions);
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        result = 31 * result + (instructions != null ? Arrays.hashCode(instructions) : 0);
         return result;
     }
 }

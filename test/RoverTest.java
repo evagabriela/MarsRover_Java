@@ -2,14 +2,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static org.powermock.api.mockito.PowerMockito.mock;
 
 public class RoverTest {
 
     private Rover rover;
+    private Plateau plateau;
 
     @Before
     public void setUp(){
-        rover = new Rover(1, 3, "N", "LMLM");
+        plateau = mock(Plateau.class);
+        rover = new Rover(1, 3, "N", "LMLM",plateau);
     }
 
     @Test
@@ -40,7 +43,7 @@ public class RoverTest {
 
     @Test
     public void shouldFaceNorthIfTurnLeft(){
-        rover = new Rover(1, 3, "E", "LMLM");
+        rover = new Rover(1, 3, "E", "LMLM", plateau);
         rover.turnLeft();
         assertEquals("1 3 N",rover.currentPosition());
     }
@@ -53,14 +56,14 @@ public class RoverTest {
 
     @Test
     public void shouldFaceSouthIfTurnLeft(){
-        rover = new Rover(1, 3, "W", "LMLM");
+        rover = new Rover(1, 3, "W", "LMLM", plateau);
         rover.turnLeft();
         assertEquals("1 3 S",rover.currentPosition());
     }
 
     @Test
     public void shouldFaceEastIfTurnLeft(){
-        rover = new Rover(1, 3, "S", "LMLM");
+        rover = new Rover(1, 3, "S", "LMLM", plateau);
         rover.turnLeft();
         assertEquals("1 3 E",rover.currentPosition());
     }
@@ -73,7 +76,7 @@ public class RoverTest {
 
     @Test
     public void shouldFaceNorthIfTurnRight(){
-        rover = new Rover(1, 3, "E", "LMLM");
+        rover = new Rover(1, 3, "E", "LMLM", plateau);
         rover.turnRight();
         assertEquals("1 3 S",rover.currentPosition());
     }
@@ -86,14 +89,14 @@ public class RoverTest {
 
     @Test
     public void shouldFaceSouthIfTurnRight(){
-        rover = new Rover(1, 3, "W", "LMLM");
+        rover = new Rover(1, 3, "W", "LMLM", plateau);
         rover.turnRight();
         assertEquals("1 3 N",rover.currentPosition());
     }
 
     @Test
     public void shouldFaceEastIfTurnRight(){
-        rover = new Rover(1, 3, "S", "LMLM");
+        rover = new Rover(1, 3, "S", "LMLM", plateau);
         rover.turnRight();
         assertEquals("1 3 W",rover.currentPosition());
     }

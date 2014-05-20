@@ -26,14 +26,15 @@ public class RoverParser {
 
         while ((line = bufferReader.readLine()) != null) {
             String instructions = bufferReader.readLine();
-            plateau.addRover(createRover(line, instructions));
+            plateau.addRover(createRover(line, instructions, plateau));
         }
         return plateau;
     }
 
-    public Rover createRover(String initialLocation, String instructions) {
+    public Rover createRover(String initialLocation, String instructions, Plateau plateau) {
         String[] linePieces = initialLocation.split(" ");
-        return new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2], instructions);
+
+        return new Rover(parseInt(linePieces[0]), parseInt(linePieces[1]), linePieces[2], instructions, plateau);
     }
 
     public Plateau createPlateau(String line)  {
