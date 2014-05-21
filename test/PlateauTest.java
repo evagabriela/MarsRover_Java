@@ -1,5 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+
+import java.io.PrintStream;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
@@ -12,10 +15,12 @@ public class PlateauTest {
 
     private Plateau plateau;
     private Rover rover;
+    private PrintStream out;
 
     @Before
     public void setUp(){
-        plateau = new Plateau(5,5);
+        out = Mockito.mock(PrintStream.class);
+        plateau = new Plateau(5,5, out);
         rover = mock(Rover.class);
     }
 
@@ -53,7 +58,7 @@ public class PlateauTest {
     }
 
      @Test
-    public void shouldTellEachRoverToRunItsInstructions(){
+    public void shouldTellEachRoverToRunItsInstructions() {
          plateau.addRover(rover);
          plateau.runRoverInstructions();
          verify(rover).runInstruction();
@@ -65,6 +70,17 @@ public class PlateauTest {
          plateau.showRoverFinalPositions();
 
          verify(rover).currentPosition();
-
      }
+
+    @Test
+    public void shouldReturnMessageForInvalidRoverInstructions(){
+        when(rover.hasError()).thenReturn(true);
+        plateau.addRover(rover);
+
+        plateau.showRoverFinalPositions();
+
+        verify(out).println("Rover final position: This rover has invalid instructions" + "\n");
+    }
+
+
 }
