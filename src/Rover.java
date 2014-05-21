@@ -28,7 +28,6 @@ public class Rover {
         return y;
     }
 
-
     public void move() {
 
         int roverXCor = getXCoordinate();

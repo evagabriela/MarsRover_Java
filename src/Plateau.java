@@ -54,20 +54,16 @@ public class Plateau {
     }
 
     public void showRoverFinalPositions() {
-
-//        String finalPosRover = "";
+        printStream.println("There are in total " + roverList.size() + " rovers: \n");
+            
         for (Rover rover : roverList){
-
             if (!rover.hasError()){
-
                 printStream.println("Rover final position: "+(rover.currentPosition()) + "\n");
             } else {
                 printStream.println("Rover final position: This rover has invalid instructions" + "\n");
             }
 
         }
-
-//        return finalPosRover;
     }
 
     @Override
