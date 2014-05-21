@@ -6,6 +6,7 @@ public class Rover {
     private int y;
     private String direction;
     private final char[] instructions;
+    private boolean error;
 
     public Rover(int x, int y, String direction, String instructions, Plateau plateau) {
         this.x = x;
@@ -19,24 +20,37 @@ public class Rover {
         return x + " "+ y + " " + direction;
     }
 
-    public int xCoordinate(){
+    public int getXCoordinate(){
         return x;
     }
 
-    public int yCoordinate(){
+    public int getYCoordinate(){
         return y;
     }
 
+
     public void move() {
-//        here is where I need to check if valid space
-       if( direction.equals("N") ){
+//      Check if valid space:
+//        check if plateau isSpaceValid and if so then run instructions (move)
+
+        int roverXCor = getXCoordinate();
+        int roverYCor = getYCoordinate();
+
+        if (direction.equals("S")&& plateau.isSpaceValid(roverXCor, roverYCor - 1)) {
+            y -= 1;
+        }else if(direction.equals("S")&& !plateau.isSpaceValid(roverXCor, roverYCor - 1)){
+            error = true;
+         }
+        else if (direction.equals("W")&& plateau.isSpaceValid(roverXCor - 1, roverYCor)){
+            x -= 1;
+        }
+//        else if(direction.equals("W")&& !plateau.isSpaceValid(roverXCor - 1, roverYCor)){
+//            System.out.println("Error: one of the rovers fell off from the x- coordinate of the plateau");
+//        }
+        else if( direction.equals("N")){
             y += 1;
-        } else if(direction.equals("S")){
-           y -= 1;
-       } else if(direction.equals("E")){
+       } else if(direction.equals("E")) {
            x += 1;
-       } else{
-           x -= 1;
        }
     }
 
@@ -66,18 +80,19 @@ public class Rover {
     }
 
     public void runInstruction() {
+
         for (Character instruction : instructions) {
 
             String instructionString = String.valueOf(instruction);
 
-                  if (instructionString.equals("R")) {
-                      turnRight();
-                  } else if (instructionString.equals("L")) {
-                      turnLeft();
-                  } else {
-                      move();
-                  }
-              }
+            if (instructionString.equals("M")) {
+                move();
+            } else if (instructionString.equals("L")) {
+                turnLeft();
+            } else {
+               turnRight();
+            }
+        }
 
     }
 
@@ -105,6 +120,14 @@ public class Rover {
         result = 31 * result + (direction != null ? direction.hashCode() : 0);
         result = 31 * result + (instructions != null ? Arrays.hashCode(instructions) : 0);
         return result;
+    }
+
+    public boolean hasError() {
+        if (error){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
