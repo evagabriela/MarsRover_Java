@@ -1,14 +1,18 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import static java.lang.Integer.parseInt;
 
 public class RoverParser {
     private final String fileName;
+    private PrintStream out;
 
-    public RoverParser(String fileName){
+    public RoverParser(String fileName, PrintStream printStream){
         this.fileName = fileName;
+        this.out = printStream;
+
     }
 
     public Plateau plateauSetUp() throws IOException {
@@ -46,7 +50,7 @@ public class RoverParser {
         int widthNum = parseInt(width);
         int heightNum = parseInt(height);
 
-        return new Plateau(heightNum, widthNum);
+        return new Plateau(heightNum, widthNum, out);
     }
 
 }
