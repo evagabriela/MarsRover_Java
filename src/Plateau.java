@@ -55,7 +55,7 @@ public class Plateau {
 
     public void showRoverFinalPositions() {
         printStream.println("There are in total " + roverList.size() + " rovers: \n");
-            
+
         for (Rover rover : roverList){
             if (!rover.hasError()){
                 printStream.println("Rover final position: "+(rover.currentPosition()) + "\n");
