@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 import static org.powermock.api.mockito.PowerMockito.mock;
 
 public class RoverTest {
@@ -21,7 +22,7 @@ public class RoverTest {
     }
 
     @Test
-    public void shouldMoveForwardInTheDirectionIsFacing(){
+    public void shouldMoveForwardInTheDirectionIsFacing()  {
         rover.move();
         assertEquals("1 4 N",rover.currentPosition());
     }
@@ -112,9 +113,20 @@ public class RoverTest {
 
 
     @Test
-    public void shouldExecuteEachRoverInstruction(){
+    public void shouldExecuteEachRoverInstruction()  {
+        rover = new Rover(1, 3, "N", "RM",plateau);
+
         rover.runInstruction();
-        assertEquals("0 2 S", rover.currentPosition());
+        assertEquals("2 3 E", rover.currentPosition());
+    }
+
+    @Test
+    public void shouldReturnTrueIfRoverHasInvalidInstructions()  {
+        rover = new Rover(1, 1, "N", "LMMLMM",plateau);
+
+        rover.runInstruction();
+
+        assertTrue(rover.hasError());
     }
 
 //    Need to add interface Command and create a class for each command.
