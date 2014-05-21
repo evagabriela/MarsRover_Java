@@ -21,11 +21,7 @@ public class RoverTest {
         assertEquals("1 3 N",rover.currentPosition());
     }
 
-    @Test
-    public void shouldMoveForwardInTheDirectionIsFacing()  {
-        rover.move();
-        assertEquals("1 4 N",rover.currentPosition());
-    }
+
 
     @Test
     public void shouldMoveLeft(){

@@ -35,6 +35,17 @@ public class PlateauTest {
     }
 
     @Test
+    public void shouldRoverMoveForwardInTheDirectionIsFacing()  {
+        rover = new Rover(2, 3, "N", "M",plateau);
+        plateau.addRover(rover);
+
+        plateau.runRoverInstructions();
+        plateau.showRoverFinalPositions();
+
+        verify(out).println("Rover final position: 2 4 N" + "\n");
+    }
+
+    @Test
     public void shouldReturnFalseIFSpaceIsNegative(){
         assertFalse(plateau.isSpaceValid(-2, 9));
     }
@@ -81,6 +92,5 @@ public class PlateauTest {
 
         verify(out).println("Rover final position: This rover has invalid instructions" + "\n");
     }
-
 
 }

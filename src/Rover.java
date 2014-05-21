@@ -46,7 +46,7 @@ public class Rover {
             y += 1;
         } else if (direction.equals("N") && !plateau.isSpaceValid(roverXCor, roverYCor + 1)) {
             error = true;
-        } else if(direction.equals("E")) {
+        } else if(direction.equals("E")){
            x += 1;
         }
     }
