@@ -1,21 +1,26 @@
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class Plateau {
     private final ArrayList<Rover> roverList;
     private final int height;
     private final int width;
+    private PrintStream printStream;
 
-    public Plateau(int height, int width){
+
+    public Plateau(int height, int width, PrintStream printStream){
         this.height = height;
         this.width = width;
         this.roverList = new ArrayList<Rover>();
+        this.printStream = printStream;
+
     }
 
     public boolean isSpaceValid(int x, int y) {
 
         for (Rover rover: roverList) {
-            int roverXCoordinate = rover.xCoordinate();
-            int roverYCoordinate = rover.yCoordinate();
+            int roverXCoordinate = rover.getXCoordinate();
+            int roverYCoordinate = rover.getYCoordinate();
 
             if (x == roverXCoordinate && y == roverYCoordinate){
                 return false;
@@ -31,8 +36,8 @@ public class Plateau {
     }
 
     public boolean addRover(Rover rover) {
-        int x = rover.xCoordinate();
-        int y = rover.yCoordinate();
+        int x = rover.getXCoordinate();
+        int y = rover.getYCoordinate();
         if (isSpaceValid(x,y)){
             roverList.add(rover);
             return true;
@@ -48,13 +53,21 @@ public class Plateau {
         }
     }
 
-    public String showRoverFinalPositions() {
-        String finalPosRover = "";
+    public void showRoverFinalPositions() {
+
+//        String finalPosRover = "";
         for (Rover rover : roverList){
-            finalPosRover += (rover.currentPosition()) + "\n";
+
+            if (!rover.hasError()){
+
+                printStream.println("Rover final position: "+(rover.currentPosition()) + "\n");
+            } else {
+                printStream.println("Rover final position: This rover has invalid instructions" + "\n");
+            }
+
         }
 
-        return finalPosRover;
+//        return finalPosRover;
     }
 
     @Override
