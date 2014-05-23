@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Rover {
     private final Plateau plateau;
@@ -76,18 +78,21 @@ public class Rover {
     public void runInstruction() {
 
         for (Character instruction : instructions) {
-
             String instructionString = String.valueOf(instruction);
-
-            if (instructionString.equals("M")) {
-                move();
-            } else if (instructionString.equals("L")) {
-                turnLeft();
-            } else {
-               turnRight();
+            if (commandMapper().containsKey(instructionString)){
+                Command command = commandMapper().get(instructionString);
+                command.execute();
             }
         }
 
+    }
+
+    private Map<String, Command> commandMapper(){
+        Map<String, Command> instructionsToCommand= new HashMap<String, Command>();
+        instructionsToCommand.put("M", new MoveCommand(this));
+        instructionsToCommand.put("L", new TurnLeftCommand(this));
+        instructionsToCommand.put("R", new TurnRightCommand(this));
+        return instructionsToCommand;
     }
 
     @Override
