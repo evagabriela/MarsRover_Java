@@ -9,6 +9,7 @@ public class Rover {
     private String direction;
     private final char[] instructions;
     private boolean error;
+    private Map<String, Command> commandMapper;
 
     public Rover(int x, int y, String direction, String instructions, Plateau plateau) {
         this.x = x;
@@ -16,6 +17,14 @@ public class Rover {
         this.direction = direction;
         this.instructions =  instructions.toCharArray();
         this.plateau = plateau;
+        this.commandMapper = new HashMap<String, Command>();
+        commandMapper.put("M", new MoveCommand(this));
+        commandMapper.put("L", new TurnLeftCommand(this));
+        commandMapper.put("R", new TurnRightCommand(this));
+    }
+
+    public Map<String, Command> getCommandMapper(){
+        return commandMapper;
     }
 
     public String currentPosition(){
@@ -76,23 +85,33 @@ public class Rover {
     }
 
     public void runInstruction() {
-
         for (Character instruction : instructions) {
             String instructionString = String.valueOf(instruction);
-            if (commandMapper().containsKey(instructionString)){
-                Command command = commandMapper().get(instructionString);
+
+            Map<String, Command> myCommandMapper = getCommandMapper();
+
+            if (myCommandMapper.containsKey(instructionString)){
+                Command command = myCommandMapper.get(instructionString);
                 command.execute();
             }
         }
-
     }
 
-    private Map<String, Command> commandMapper(){
-        Map<String, Command> instructionsToCommand= new HashMap<String, Command>();
-        instructionsToCommand.put("M", new MoveCommand(this));
-        instructionsToCommand.put("L", new TurnLeftCommand(this));
-        instructionsToCommand.put("R", new TurnRightCommand(this));
-        return instructionsToCommand;
+//    private void commandMapper(){
+////        it initialize the hash ones and it doesnt have to do it every time
+////        Doesnt depend of other variables, there is not arguments and only use "this" so its
+////        a sign that should go in the constructor
+//
+//        Map<String, Command> instructionsToCommand= new HashMap<String, Command>();
+//        instructionsToCommand.put("M", new MoveCommand(this));
+//        instructionsToCommand.put("L", new TurnLeftCommand(this));
+//        instructionsToCommand.put("R", new TurnRightCommand(this));
+//
+//        commandMapper = instructionsToCommand;
+//    }
+
+    public boolean hasError() {
+        return error;
     }
 
     @Override
@@ -119,14 +138,6 @@ public class Rover {
         result = 31 * result + (direction != null ? direction.hashCode() : 0);
         result = 31 * result + (instructions != null ? Arrays.hashCode(instructions) : 0);
         return result;
-    }
-
-    public boolean hasError() {
-        if (error){
-            return true;
-        } else {
-            return false;
-        }
     }
 }
 

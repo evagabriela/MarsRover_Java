@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
+import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.mock;
 
 public class RoverTest {
@@ -133,8 +134,8 @@ public class RoverTest {
         assertEquals("2 2 S", rover2.currentPosition());
     }
 
-
-    //    Need to add interface Command and create a class for each command.
+// ***** Notes from Bill's feedback **********
+//    Need to add interface Command and create a class for each command.
 //    Therefore, Needs similar tests as below
 //    it test each command execution
 
@@ -147,23 +148,36 @@ public class RoverTest {
 //        verify(turnRightCommand).execute();
 //    }
 
-//    @Test
-//    public void shouldTurnRightWhenCommandExecuteIsR(){
-//
-//        rover = new Rover(1, 1, "N", "R", plateau);
+    @Test
+    public void shouldTurnRightWhenCommandExecuteIsR(){
+        rover = new Rover(1, 1, "N", "R", plateau);
 //        Command turnRightCommand = new TurnRightCommand(rover);
 //        Command spy = spy(turnRightCommand);
 //
 //        Map<String, Command> instructionsToCommand= mock(HashMap.class);
-////        instructionsToCommand.put("M", new MoveCommand(rover));
-////        instructionsToCommand.put("L", new TurnLeftCommand(rover));
-////        instructionsToCommand.put("R", spy);
-//
+
+//        instructionsToCommand.put("M", new MoveCommand(rover));
+//        instructionsToCommand.put("L", new TurnLeftCommand(rover));
+//        instructionsToCommand.put("R", spy);
+
 //        when(instructionsToCommand.get("R")).thenReturn(spy);
-//
-//        rover.runInstruction();
-//
-//        verify(spy).execute();
-//
-//    }
+
+//     => ****  PROBLEM: rover.runInstructions calls the real TurnRightCommand instead of the "mock" one so when
+//        I verify if the method execute() was called, then it returns "there were zero intereactiosn with this mock"
+        TurnRightCommand turnRight = mock(TurnRightCommand.class);
+
+        rover.getCommandMapper().put("R", turnRight);
+
+
+        rover.runInstruction();
+//goal: the method execute is being called in the TUrnRightCOmmand instance that is being  created when run instructions
+//        Problem:  How do I access to the instance of the Turn Right Command (inside of the run instruction)
+
+        verify(turnRight).execute();
+//options:
+// put in constructor
+// create a getter
+
+    }
+
 }
