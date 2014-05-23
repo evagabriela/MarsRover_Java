@@ -95,19 +95,6 @@ public class Rover {
         }
     }
 
-//    private void commandMapper(){
-////        it initialize the hash ones and it doesnt have to do it every time
-////        Doesnt depend of other variables, there is not arguments and only use "this" so its
-////        a sign that should go in the constructor
-//
-//        Map<String, Command> instructionsToCommand= new HashMap<String, Command>();
-//        instructionsToCommand.put("M", new MoveCommand(this));
-//        instructionsToCommand.put("L", new TurnLeftCommand(this));
-//        instructionsToCommand.put("R", new TurnRightCommand(this));
-//
-//        commandMapper = instructionsToCommand;
-//    }
-
     public boolean hasError() {
         return error;
     }
