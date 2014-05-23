@@ -1,5 +1,6 @@
 /**
  * Created by gzamudio on 5/23/14.
  */
-public class Command {
+public interface Command {
+    public void execute();
 }
