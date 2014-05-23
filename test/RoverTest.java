@@ -107,25 +107,34 @@ public class RoverTest {
         assertEquals("1 3 N",rover.currentPosition());
     }
 
-
-    @Test
-    public void shouldExecuteEachRoverInstruction()  {
-        rover = new Rover(1, 3, "N", "RM",plateau);
-
-        rover.runInstruction();
-        assertEquals("2 3 E", rover.currentPosition());
-    }
-
     @Test
     public void shouldReturnTrueIfRoverHasInvalidInstructions()  {
-        rover = new Rover(1, 1, "N", "LMMLMM",plateau);
-
         rover.runInstruction();
 
         assertTrue(rover.hasError());
     }
 
-//    Need to add interface Command and create a class for each command.
+//**** Add new tests after implementing interface and replacing runInstructions code with it
+
+    @Test
+    public void shouldTurnLeftWhenCommandIsL() {
+        Rover rover1 = new Rover(1, 3, "E", "L", plateau);
+
+        rover1.runInstruction();
+        assertEquals("1 3 N", rover1.currentPosition());
+    }
+
+    @Test
+    public void shouldTurnRightWhenCommandIsR() {
+        Rover rover2 = new Rover(2, 2, "E", "R", plateau);
+
+        rover2.runInstruction();
+
+        assertEquals("2 2 S", rover2.currentPosition());
+    }
+
+
+    //    Need to add interface Command and create a class for each command.
 //    Therefore, Needs similar tests as below
 //    it test each command execution
 
@@ -136,5 +145,25 @@ public class RoverTest {
 //        rover1.runInstruction();
 
 //        verify(turnRightCommand).execute();
+//    }
+
+//    @Test
+//    public void shouldTurnRightWhenCommandExecuteIsR(){
+//
+//        rover = new Rover(1, 1, "N", "R", plateau);
+//        Command turnRightCommand = new TurnRightCommand(rover);
+//        Command spy = spy(turnRightCommand);
+//
+//        Map<String, Command> instructionsToCommand= mock(HashMap.class);
+////        instructionsToCommand.put("M", new MoveCommand(rover));
+////        instructionsToCommand.put("L", new TurnLeftCommand(rover));
+////        instructionsToCommand.put("R", spy);
+//
+//        when(instructionsToCommand.get("R")).thenReturn(spy);
+//
+//        rover.runInstruction();
+//
+//        verify(spy).execute();
+//
 //    }
 }
