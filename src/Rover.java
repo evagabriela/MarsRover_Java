@@ -87,9 +87,7 @@ public class Rover {
     public void runInstruction() {
         for (Character instruction : instructions) {
             String instructionString = String.valueOf(instruction);
-
             Map<String, Command> myCommandMapper = getCommandMapper();
-
             if (myCommandMapper.containsKey(instructionString)){
                 Command command = myCommandMapper.get(instructionString);
                 command.execute();
