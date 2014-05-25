@@ -85,7 +85,7 @@ public class PlateauTest {
 
     @Test
     public void shouldReturnMessageForInvalidRoverInstructions(){
-        when(rover.hasError()).thenReturn(true);
+        when(rover.getError()).thenReturn(true);
         plateau.addRover(rover);
 
         plateau.showRoverFinalPositions();

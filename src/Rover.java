@@ -84,6 +84,10 @@ public class Rover {
         }
     }
 
+        public boolean getError() {
+        return error;
+    }
+
     public void runInstruction() {
         for (Character instruction : instructions) {
             String instructionString = String.valueOf(instruction);
@@ -95,9 +99,7 @@ public class Rover {
         }
     }
 
-    public boolean hasError() {
-        return error;
-    }
+
 
     @Override
     public boolean equals(Object o) {

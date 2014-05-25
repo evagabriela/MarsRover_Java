@@ -112,7 +112,7 @@ public class RoverTest {
     public void shouldReturnTrueIfRoverHasInvalidInstructions()  {
         rover.runInstruction();
 
-        assertTrue(rover.hasError());
+        assertTrue(rover.getError());
     }
 
     @Test
@@ -160,4 +160,23 @@ public class RoverTest {
 
         verify(moveCommand).execute();
     }
+
+//    @Test
+//    public void shouldSomething(){
+//        rover = new Rover(1, 1, "N", "R", plateau);
+//
+//        HashMap<String, Command>  myMapper = mock(HashMap.class);
+//
+//        TurnRightCommand turnRight = mock(TurnRightCommand.class);
+//
+//        when(myMapper.get("R")).thenReturn(turnRight);
+//
+//
+//        rover.runInstruction();
+//
+//        verify(turnRight).execute();
+//
+//    }
+
+
 }
