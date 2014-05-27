@@ -23,20 +23,12 @@ public class Rover {
         commandMapper.put("R", new TurnRightCommand(this));
     }
 
-    public Map<String, Command> getCommandMapper(){
-        return commandMapper;
-    }
-
     public String currentPosition(){
         return x + " "+ y + " " + direction;
     }
 
-    public int getXCoordinate(){
-        return x;
-    }
-
-    public int getYCoordinate(){
-        return y;
+    public Map<String, Command> getCommandMapper(){
+        return commandMapper;
     }
 
     public void move() {
@@ -57,6 +49,14 @@ public class Rover {
         } else {
                 error = true;
         }
+    }
+
+    public int getYCoordinate(){
+        return y;
+    }
+
+    public int getXCoordinate(){
+        return x;
     }
 
     public void turnLeft() {
@@ -84,7 +84,7 @@ public class Rover {
         }
     }
 
-        public boolean getError() {
+    public boolean hasError() {
         return error;
     }
 

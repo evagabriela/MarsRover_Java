@@ -112,7 +112,7 @@ public class RoverTest {
     public void shouldReturnTrueIfRoverHasInvalidInstructions()  {
         rover.runInstruction();
 
-        assertTrue(rover.getError());
+        assertTrue(rover.hasError());
     }
 
     @Test
